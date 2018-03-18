@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="grigory">
+        <createTable tableName="article">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="header" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="text" type="varchar(2048)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="grigory">
+        <createTable tableName="settings">
+            <column name="key" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="description" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="grigory">
+        <modifyDataType tableName="article" columnName="text" newDataType="varchar(4096)"/>
+    </changeSet>
+    <changeSet id="4" author="grigory">
+        <addColumn tableName="article">
+            <column name="page" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="5" author="grigory">
+        <insert tableName="settings">
+            <column name="key">image-data</column>
+            <column name="value">/tmp</column>
+            <column name="description">Директория на сервере, где будут храниться изображения</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="6" author="grigory">
+        <modifyDataType tableName="article" columnName="text" newDataType="varchar(8000)"/>
+    </changeSet>
+
+    <changeSet id="7" author="grigory">
+        <createTable tableName="image">
+            <column name="filename" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="header" type="varchar(255)"/>
+            <column name="description" type="varchar(1024)"/>
+            <column name="tag" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="md5" type="varchar(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="md5thumb" type="varchar(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_add" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="8" author="grigory">
+        <addColumn tableName="image">
+            <column name="in_club" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false" />
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

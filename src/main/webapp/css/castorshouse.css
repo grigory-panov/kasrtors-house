@@ -1,0 +1,117 @@
+.admin-container{
+    padding-top: 60px;
+}
+.padding60{
+    padding-top: 60px;
+}
+.margin50{
+    margin-top: 50px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.header{
+    background-image:url("/img/header.jpg");
+    	background-position:center;
+    	background-repeat:no-repeat;
+}
+.header-heeler{
+    background-image:url("/img/bg-heeler.jpg");
+    	background-position:center;
+    	background-repeat:no-repeat;
+}
+.header-cadebou{
+    background-image:url("/img/bg-cadebou.jpg");
+    	background-position:center;
+    	background-repeat:no-repeat;
+}
+
+.header-minibull{
+    background-image:url("/img/bg-minibull.jpg");
+    	background-position:center;
+    	background-repeat:no-repeat;
+}
+
+
+div.article img{
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      border-radius: 6px;
+}
+
+div.article p{
+    overflow: auto;
+}
+
+img.left{
+    float: left;
+    min-width: 273px;
+    padding: 5px;
+    border-radius: 6px;
+}
+img.right{
+    float: right;
+    min-width: 273px;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .header{
+        background: white;
+    }
+    .header-heeler{
+        background: white;
+    }
+    .header-cadebou{
+        background: white;
+    }
+
+    .header-minibull{
+        background: white;
+    }
+
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
